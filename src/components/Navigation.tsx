@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
-const items = ["Dashboard", "Features", "How It Works", "Pricing", "Contact"];
+const items = ["Get Started", "Dashboard", "Features", "How It Works", "Pricing", "Contact"];
 
 export const Navigation = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -36,7 +36,7 @@ export const Navigation = () => {
           </a>
 
           <div className="hidden items-center gap-8 md:flex">
-            {items.map((item, i) => (
+            {items.slice(1).map((item, i) => (
               <motion.a
                 key={item}
                 href={`#${item.toLowerCase().replace(/\s+/g, '-')}`}
@@ -52,10 +52,10 @@ export const Navigation = () => {
           </div>
 
           <div className="hidden md:block">
-            <button className="group relative px-6 py-2.5 rounded-full overflow-hidden bg-white text-black text-[10px] font-bold uppercase tracking-[0.2em] transition-all duration-300 hover:scale-105 active:scale-95">
+            <a href="/voxver-x1" className="group relative px-6 py-2.5 rounded-full overflow-hidden bg-white text-black text-[10px] font-bold uppercase tracking-[0.2em] transition-all duration-300 hover:scale-105 active:scale-95 inline-block">
               <span className="relative z-10">Get Started</span>
               <div className="absolute inset-0 bg-cyan-400 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
-            </button>
+            </a>
           </div>
 
           <button
@@ -89,7 +89,7 @@ export const Navigation = () => {
               {items.map((item, i) => (
                 <motion.a
                   key={item}
-                  href={`#${item.toLowerCase().replace(/\s+/g, '-')}`}
+                  href={item === "Get Started" ? "/voxver-x1" : `#${item.toLowerCase().replace(/\s+/g, '-')}`}
                   onClick={() => setOpen(false)}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}

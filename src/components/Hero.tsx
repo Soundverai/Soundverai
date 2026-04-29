@@ -109,6 +109,21 @@ export const Hero = () => {
             Experience the most advanced cognitive audio engine ever built
             <span className="block mt-2 text-white/80 font-normal"> Powered by real-time emotional intelligence, studio-grade voice synthesis, and limitless scalability.</span>
           </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1.2 }}
+            className="mt-12"
+          >
+            <a
+              href="/voxver-x1"
+              className="group inline-flex items-center gap-3 px-8 py-4 bg-cyan-500 text-black font-bold uppercase tracking-widest text-sm rounded-full hover:bg-cyan-400 transition-colors"
+            >
+              Discover Voxver X.1
+              <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+            </a>
+          </motion.div>
         </motion.div>
 
         {/* Dynamic Waveform at bottom */}
